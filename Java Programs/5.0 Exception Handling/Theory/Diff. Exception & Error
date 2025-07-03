@@ -1,0 +1,23 @@
+Exception:-
+
+(1) Recoverable: Exceptions can be handled using try-catch blocks, so the program can continue running.
+
+(2) Cause: These usually occur due to mistakes in the program logic or input issues (e.g., dividing by zero, null pointer access).
+
+(3) Types of Exception-
+    - Compile Time (Checked Exception)
+    - Run Time (Un-Checked Exception)
+
+    Examples:
+    -NullPointerException
+    -ArithmeticException
+
+ Error
+(1) Unrecoverable: Errors cannot be handled by the program. They indicate serious problems that usually can’t be fixed at runtime.
+
+(2) Cause: These are mostly caused by system-level issues like memory leaks or JVM crashes.
+
+    Examples:
+    -OutOfMemoryError
+    -StackOverflowError
+    -VirtualMachineError

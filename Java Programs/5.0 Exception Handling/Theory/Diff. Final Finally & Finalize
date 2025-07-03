@@ -1,0 +1,17 @@
+🔹 1. final — Keyword
+Used to declare constants, prevent method overriding, or inheritance.
+
+Use	Description
+Final variable	Value cannot be changed once assigned
+Final method	Cannot be overridden by subclasses
+Final class	Cannot be extended (inherited)
+
+🔹 2. finally — Block
+Used in exception handling to execute important cleanup code, runs regardless of exception.
+
+🔹 3. finalize() — Method
+Defined in the Object class.
+
+Called by the Garbage Collector before destroying an object.
+
+Used to perform cleanup operations, like closing resources.

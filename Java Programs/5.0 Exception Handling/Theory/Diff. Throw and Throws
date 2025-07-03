@@ -1,0 +1,64 @@
+// 🔹 throw — Keyword
+// throw keyword is used to create an exception object manually i.e., normally method creates an exception object as exception occurs in that method, but when we use throw, programmer is responsible to create an exception object.
+// Throw keyword is used in case of Unchecked Exception.
+// We can throw only single Exception.
+// Throw keyword is used within the method.
+// throw keyword is followed by new instance.
+// We cannot write any statement after throw keyword (it will throw unreachable statement)and thus it can be used to break the statement.
+// Example Code:-
+
+public class YoungAgeException extends RuntimeException
+{
+   YoungAgeException(String msg)
+   {
+       super(msg);
+   }
+}
+
+class Test
+{
+   public static void main(String[] var0)
+   {
+      int age = 16;
+      if(age<18)
+      {
+         throw new YoungAgeException("min age should be 18");
+      }
+      else
+      {
+         System.out.println("Great");
+      }
+   }
+}
+
+// 🔹 throws — Keyword
+// Throws keyword is used to declare the exception, i.e., it indicates the caller method that given exception occure so we have to handle it eitherusing try catch block or again declare it by using throws keyword.
+// Throws keyword is used in case of checked Exception.
+// We can declare multiple exception.
+// Throws keyword is used with method signature.
+// Throws keyword is followed by class.
+/ We can write any statement after throw keyword.
+// Example Code:-
+
+public class ThrowsExample
+ {
+     public void  readFile() throws FileNotFoundException
+     {
+         FileInputStream Fis = new FileInputStream("d:/abc.txt")
+     {
+ }
+ class test
+ {
+ public static void main(String[] var0)
+    {
+        ReadAndWrite rw = new ReadAndWrite();
+       try
+       {
+        rw.readfile();
+       }
+       catch (Exception e)
+       {
+            System.out.println(e);
+       }
+    }
+ }
