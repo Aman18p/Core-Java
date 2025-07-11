@@ -1,0 +1,28 @@
+ What is StringBuffer?
+-StringBuffers method are synchronized.
+-StringBuffer is a mutable (changeable) sequence of characters.
+ e.g.,
+    StringBuffer sb = new StringBuffer("Aman")
+    sb.append(" Pandey")
+    // Result : sb = Aman Pandey
+
+-Unlike String, it can be modified without creating a new object.
+
+-It is thread-safe (synchronized), so it's safe to use in multithreaded environments.
+
+ When we shouls use String or StringBuffer?
+If the data does not change or change one or two times only, Use String.
+If data is cinstantly or friquently changing like in calculator, notepad, etc, we should use StringBuffer.
+
+StringBuffer Constructors:-
+-StringBuffer(){...}
+-StringBuffer(CharSequence seq){...}
+-StringBuffer(String str){...}
+-StringBuffer(int capacity){...}
+
+// Can Store 16 Characters by default.
+// Its capacity increases with String Size (16 + String Length)
+// If the capacity increases then the object will increase its capacity.[(Old Capacity +1) * 2]
+// If we have idea that in our StringBuffer object we have to store atmost 1000 characters, then for that wo will provide the Constructor its default capacity.
+// e.g., StringBuffer SB = new StringBuffer(1000);
+

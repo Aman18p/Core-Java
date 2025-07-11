@@ -1,0 +1,78 @@
+String Introduction in Java
+
+-String is a non-primitive data type.
+-A String in Java is an object that represents a sequence of characters
+-Strings in Java are immutable, meaning once created, their values cannot be changed.
+-String is a class.
+ i.e.,
+
+   public final class String extends object implements CharSequence, Serializable, Comparable
+   {
+       //Constructors
+       //methods
+   }
+
+
+Ways to Create a String object
+-Using String Literal e.g., String s1 = "Hello";
+-Using new Keyword e.g., String s2 = new String("Hello");
+-Using StringBuilder e.g., StringBuilder sb = new StringBuilder();
+-Using StringBuffer e.g., StringBuffer sb = new StringBuffer();
+
+Ways to Create String class.
+- String
+- StringBuilder
+- StringBuffer
+
+
+What Does "Immutable" Mean?
+When we say String is immutable, it means:
+
+Once a String object is created, its value cannot be changed.
+
+If you try to modify it, a new object is created instead of changing the original.
+
+String str = "Aman";
+str.concat(" Pandey");
+System.out.println(str);  // Output: Aman
+
+concat() creates a new string but doesn't change str.
+If you do:
+
+str = str.concat(" Pandey");
+System.out.println(str);  // Output: Aman Pandey
+
+Now you're assigning the new object to str.
+
+ Why are Strings Immutable?
+✅ 1. Security
+Used in file paths, network URLs, database credentials.
+
+If mutable, one change could affect critical logic.
+
+✅ 2. Thread-Safety
+Immutable objects can be shared between threads without synchronization.
+
+✅ 3. String Pooling
+Java optimizes memory by storing common strings in the String Pool.
+
+If strings were mutable, one change would affect all references — dangerous!
+
+✅ 4. Caching
+Hashcode of a String is cached — useful for performance in HashMap, etc.
+
+If mutable, hashcode changes → broken hashing logic.
+
+Internally, String uses a final char[] array:
+public final class String {
+    private final char value[];
+}
+This final keyword ensures that the character array can’t be changed once assigned.
+
+Real-Life Analogy:
+Imagine your Aadhaar number (String) — once issued, it can’t be changed. If someone tries to alter it, they must generate a new Aadhaar. Similarly, changing a string results in a new object.
+
+Why is the String class final?
+- The String class is final to ensure immutability, security, consistent behavior, and optimization via string pool. Allowing inheritance would open the door to serious bugs and security vulnerabilities.
+- String class is final to ensure that no other class can extent the String class.
+- String Method is final to ensure that no other method can override it.

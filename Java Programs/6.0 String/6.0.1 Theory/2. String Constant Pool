@@ -1,0 +1,22 @@
+The String Constant Pool (SCP) is a special area in memory inside the Java heap where String literals are stored.(Before 1.6 version String Constant Pool was stored in Method Area) It helps save memory by reusing string objects.
+Example:
+String Literal-
+
+String s1 = "Aman"; // It creates 1 object in SCP.
+String s2 = "Aman";
+
+✔ Here, "Aman" is stored once in the SCP.
+✔ Both s1 and s2 point to the same object in the pool.
+
+📌 This is different from creating Strings using new.
+
+Using new Keyword-
+
+String s2 = new String("Aman");  // This will create 2 objects one in SCP and one in Heap Area.
+
+Why is String Pool Used?
+✅ Memory Optimization — avoids duplicate objects.
+
+✅ Performance Boost — faster comparison (reference-level).
+
+✅ Used in Class names, Method names, Constant values, etc.

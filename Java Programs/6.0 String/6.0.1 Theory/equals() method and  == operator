@@ -1,0 +1,45 @@
+ == Operator
+Compares reference (memory address) of two objects.
+
+Returns true only if both variables point to the same object in memory.
+
+String s1 = "Aman";
+String s2 = "Aman";
+System.out.println(s1 == s2);  // true (because of String Pool)
+
+String s3 = new String("Aman");
+System.out.println(s1 == s3);  // false (different memory locations)
+
+equals() Method
+Compares content (actual characters) of two strings.
+
+Returns true if the contents are the same.
+
+String s1 = "Aman";
+String s3 = new String("Aman");
+
+System.out.println(s1.equals(s3));  // true (same content)
+
+ Special Note: With Primitives
+
+ int a = 5;
+ int b = 5;
+ System.out.println(a == b);  // true (primitive value comparison)
+
+
+ -But with objects:
+
+ Integer a = new Integer(5);
+ Integer b = new Integer(5);
+ System.out.println(a == b);       // false (different objects)
+ System.out.println(a.equals(b));  // true
+
+ Interning with .intern()
+ You can manually add strings to the pool using .intern():
+
+ String s1 = new String("Java");
+ String s2 = s1.intern();  // s2 now points to the pool version
+
+ String s3 = "Java";
+
+ System.out.println(s2 == s3); // true
