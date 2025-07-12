@@ -1,0 +1,9 @@
+✅yield() method.
+ Tells the thread scheduler to pause current thread and give chance to other threads of same priority.
+ Belongs to: Thread class
+ No exception thrown
+ It’s just a hint to CPU (may or may not pause)
+
+ Static method of Thread class.
+ Does not throw any exception.
+ Returns void.

@@ -1,0 +1,82 @@
+✅ 1. Multitasking
+Definition:
+Multitasking is the ability of the operating system to perform multiple tasks at the same time.
+
+🔹 Example:
+Running MS Word + Browser + Music Player together.
+
+🧠 Types:
+Process-based Multitasking: Multiple programs (processes) running at the same time.
+Thread-based Multitasking: Multiple threads inside the same program (covered below).
+
+✅ 2. Multiprocessing
+Definition:
+Multiprocessing means using two or more processors (CPUs) to run multiple processes simultaneously.
+
+🔹 Example:
+Quad-core processor running different apps on different cores.
+
+🔸 Key Point:
+Requires hardware support (multi-core CPU).
+
+Achieves true parallelism.
+
+✅ 3. Multithreading
+Definition:
+Multithreading is a Java feature that allows multiple threads (smallest unit of process) to run concurrently inside a single program.
+
+🔹 Example:
+In a download manager:
+
+1st thread downloads file part A,
+
+2nd downloads part B,
+
+3rd updates progress bar.
+
+
+✅ Difference b/w Process and thread.
+
+| Feature            | **Process**                                       | **Thread**                                            |
+| -----------------  | ------------------------------------------------  | ----------------------------------------------------- |
+| Basic Unit         | Independent unit of execution                     | Smallest unit of execution inside a process           |
+| Memory             | Each process has **its own memory space**         | Threads share **the same memory** of the process      |
+| Communication      | **Inter-process communication (IPC)** is complex  | Threads can easily communicate via shared memory      |
+| Creation Overhead  | More time and resources to create                 | Less time and light-weight                            |
+| Dependency         | Processes are **independent**                     | Threads are **dependent** on the parent process       |
+| Context Switching  | Slower (more data to switch)                      | Faster (lightweight context switching)                |
+| Example            | Chrome + VS Code running separately               | In Chrome: One thread loads page, another plays video |
+| Crash Impact       | One process crash doesn't affect others           | If one thread crashes, it may affect other threads    |
+| Context Switching  | Context Switching - Takes more time               | Context Switching - Takes less time                   |
+| Use in Java        | Via `ProcessBuilder`, `Runtime.exec()`            | Via `Thread` class or `Runnable` interface            |
+| Scheduling         | Threads are scheduled by thread scheduler         | Threads are scheduled by thread scheduler             |
+
+✅Thread Life Cycle in Java.
+
+A thread in Java goes through 5 main states:
+   New → Runnable → Running → (Blocked/Waiting/Sleeping) → Terminated
+
+1. New
+Thread object is created but not started yet.
+
+Created using Thread t = new Thread();
+
+2. Runnable
+After calling start(), thread is ready to run.
+
+It's waiting for CPU to schedule it.
+
+3. Running
+Thread is actually executing the code in run() method.
+
+The thread scheduler decides when it runs.
+
+4. Blocked / Waiting / Sleeping
+Blocked: Waiting for resource (e.g., I/O or lock).
+
+Waiting: Waiting indefinitely until another thread notifies.
+
+Timed Waiting (Sleeping): Temporarily paused using sleep() or join().
+
+5. Terminated (Dead)
+When thread finishes execution or gets stopped due to exception.

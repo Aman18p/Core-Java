@@ -1,0 +1,110 @@
+1. Thread Class
+
+e.g.,
+  public class Thread1 extends Thread. //extend the thread class.
+  {
+    public void run()
+    {
+      //override the run() method
+      //task of thread
+      System.out.println("Thread Task");
+    }
+
+    public static void main(String[] args)
+    {
+       //Create an object of Thread1 class.
+       Thread1 th = new Thread1();
+
+       //Invoke the thread.
+       start();
+    }
+  }
+
+2. Runnable Interface.
+
+e.g.,
+  class Thread1 implements Runnable //implements the Runnable Interface.
+  {
+     public void run()
+         {
+           //task of thread
+           System.out.println("Thread Task");
+         }
+     public static void main(String[] args)
+         {
+            //Create an object of Thread1 class.
+            Thread1 th1 = new Thread1();
+
+
+            //Create an object of Thread class.
+            Thread th = new Thread(th1);
+            th.start();
+         }
+  }
+
+ ✅ Cases
+ 1. We can perform single task from single thread.
+    e.g.,
+      public class Thread1 extends Thread. //extend the thread class.
+      {
+        public void run()
+        {
+          System.out.println("Thread Task");
+        }
+
+        public static void main(String[] args)
+        {
+           Thread1 th = new Thread1();
+           start();
+        }
+      }
+
+ 2. We can perform single task from Multiple thread.
+   e.g.,
+         public class Thread1 extends Thread. //extend the thread class.
+         {
+           public void run()
+           {
+             System.out.println("Thread Task");
+           }
+
+           public static void main(String[] args)
+           {
+              Thread1 th1 = new Thread1();
+              th1.start();
+
+              Thread1 th2 = new Thread1();
+              th2.start();
+           }
+         }
+
+ 3. We can perform multiple task from multiple threads.
+  e.g.,
+          class Thread1 extends Thread. //extend the thread class.
+          {
+            public void run()
+            {
+              System.out.println("Thread Task");
+            }
+          }
+
+          class Thread2 extends Thread.
+            public void run()
+            {
+              System.out.println("Thread Task");
+            }
+          }
+
+          public class Test
+          {
+          public static void main(String[] args)
+            {
+               Thread1 th1 = new Thread1();
+               th1.start();
+
+               Thread2 th2 = new Thread1();
+               th2.start();
+            }
+          }
+
+ note:- We cannot perform multiple task from single thread.

@@ -1,0 +1,10 @@
+✅join() method.
+Causes the current thread to wait until another thread finishes execution.
+Belongs to: Thread class
+Throws: InterruptedException.
+
+How it Works
+If Thread A calls Thread B.join(), then Thread A waits until Thread B completes.
+
+Often used to coordinate execution order between threads.
+
