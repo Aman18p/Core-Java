@@ -1,0 +1,118 @@
+✅Synchronization in Java
+- Synchronization ensures that only one thread can access a shared resource at a time, to prevent data inconsistency or race conditions.
+
+Why Use Synchronization?
+When multiple threads access shared data, like a variable, object, or method, there's a risk of:
+
+-Inconsistent output
+-Corrupted data
+-Unexpected behavior
+
+Types of Synchronization:
+1. Synchronized Method
+-Whole method is locked for only one thread at a time.
+-Only one thread can execute this method for an object at a time.
+e.g.,
+
+  synchronized class Table
+  {
+      void printTable(int n)
+      {
+
+              for(int i=1; i<=5; i++)
+               {
+                  System.out.println(n + " * " + i + " = " + (n*i));
+                  try { Thread.sleep(400); } catch(Exception e) {}
+              }
+
+      }
+  }
+
+  class MyThread1 extends Thread
+  {
+      Table t;
+      MyThread1(Table t) { this.t = t; }
+      public void run()
+      {
+          t.printTable(5);
+      }
+  }
+
+  class MyThread2 extends Thread
+  {
+      Table t;
+      MyThread2(Table t) { this.t = t; }
+      public void run()
+      {
+          t.printTable(100);
+      }
+  }
+
+  public class TestSync
+  {
+      public static void main(String args[])
+      {
+          Table obj = new Table(); // only one object
+          MyThread1 t1 = new MyThread1(obj);
+          MyThread2 t2 = new MyThread2(obj);
+          t1.start();
+          t2.start();
+      }
+  }
+
+
+2. Synchronized Block
+-Only a part of the method is synchronized using synchronized(object).
+-Useful when you want to synchronize only a portion of code instead of entire method.
+
+e.g.,
+
+  class Table {
+      void printTable(int n)
+      {
+          System.out.println(i);
+          System.out.println(i+1);
+          System.out.println(i+2);
+          System.out.println(i+3);
+
+          synchronized(this)
+          {
+              for(int i=1; i<=5; i++) {
+                  System.out.println(n + " * " + i + " = " + (n*i));
+                  try { Thread.sleep(400); } catch(Exception e) {}
+              }
+          }
+      }
+  }
+
+  class MyThread1 extends Thread
+  {
+      Table t;
+      MyThread1(Table t) { this.t = t; }
+      public void run()
+      {
+          t.printTable(5);
+      }
+  }
+
+  class MyThread2 extends Thread
+  {
+      Table t;
+      MyThread2(Table t) { this.t = t; }
+      public void run()
+      {
+          t.printTable(100);
+      }
+  }
+
+  public class TestSync
+  {
+      public static void main(String args[])
+      {
+          Table obj = new Table(); // only one object
+          MyThread1 t1 = new MyThread1(obj);
+          MyThread2 t2 = new MyThread2(obj);
+          t1.start();
+          t2.start();
+      }
+  }
