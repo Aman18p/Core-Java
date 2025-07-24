@@ -1,0 +1,55 @@
+✅What is a Wrapper Class in Java?
+-In Java, a wrapper class is used to convert primitive data types (like int, char, boolean) into objects.
+
+- Converting a primitive to an object = Boxing (Wrapping)
+- Converting an object back to a primitive = Unboxing (Unwrapping)
+
+✅ Why Do We Need Wrapper Classes?
+- Java collections (like ArrayList, HashMap) do not support primitive types. They work only with objects.
+- Wrapper classes provide utility methods (e.g., parseInt(), valueOf()) for type conversion and manipulation.
+- They support autoboxing and unboxing — automatically converting between primitives and wrapper objects.
+
+✅Wrapper Classes for Primitive Data Types:
+| **Primitive Type** | **Wrapper Class** |
+| ------------------ | ----------------- |
+| `byte`             | `Byte`            |
+| `short`            | `Short`           |
+| `int`              | `Integer`         |
+| `long`             | `Long`            |
+| `float`            | `Float`           |
+| `double`           | `Double`          |
+| `char`             | `Character`       |
+| `boolean`          | `Boolean`         |
+
+✅Commonly Used Methods in Wrapper Classes:
+Integer.parseInt("123") → Converts string to int
+
+Integer.valueOf(100) → Returns an Integer object
+
+Double.parseDouble("10.5") → Converts string to double
+
+Boolean.parseBoolean("true") → Converts string to boolean
+
+✅Autoboxing and Unboxing in Java
+🔹 What is Autoboxing?
+Autoboxing is the automatic conversion of a primitive data type into its corresponding wrapper class object.
+e.g.,
+int a = 10;
+Integer obj = a;  // Autoboxing (int → Integer)
+
+
+🔹 What is Unboxing?
+Unboxing is the reverse process – converting a wrapper class object back into a primitive.
+e.g.,
+Integer obj = new Integer(20);
+int b = obj;  // Unboxing (Integer → int)
+
+✅What are Generics?
+-Generics allow you to create classes, interfaces, and methods that operate on typed parameters.
+-They help write code that works with different data types, while ensuring type safety at compile time.
+
+🔹 Why Use Generics?
+- Type Safety – Catch type errors at compile time
+- Code Reusability – One class/method works for any type
+- Elimination of Typecasting
+- Better Performance – Avoids unnecessary casting and boxing
